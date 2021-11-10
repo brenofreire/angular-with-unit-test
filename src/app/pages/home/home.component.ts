@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthorsApiResponse } from 'src/services/authors/authors-api.interface';
 import { AuthorsService } from 'src/services/authors/authors.service';
-import { DataAuthorsService } from 'src/services/data/data-authors.service';
 
 @Component({
   selector: 'app-home',

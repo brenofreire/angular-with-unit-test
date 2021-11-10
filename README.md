@@ -20,4 +20,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ### Disclaimer
 
-This project wast built using css.
+This project was built using css, because I'm not focused on style here.
