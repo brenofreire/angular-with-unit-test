@@ -9,6 +9,7 @@ import { AuthorsService } from 'src/services/authors/authors.service';
 })
 export class HomeComponent implements OnInit {
   authorsList: AuthorsApiResponse;
+  searchTerm: string;
 
   constructor(private authorsService: AuthorsService) {}
 
@@ -16,14 +17,9 @@ export class HomeComponent implements OnInit {
 
   async searchAuthorByName(): Promise<void> {
     const authors = await this.authorsService.searchAuthor({
-      authorName: 'JK Roling',
-      bookName: 'HP',
+      authorName: this.searchTerm,
     });
 
     this.authorsList = authors;
-  }
-
-  async worksByAuthor(some: string): Promise<void> {
-    await this.authorsService.worksByAnAuthor(some);
   }
 }

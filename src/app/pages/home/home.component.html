@@ -1,1 +1,25 @@
-<input type="text" pInputText />
+<main>
+  <header>
+    <input
+      type="text"
+      pInputText
+      [(ngModel)]="searchTerm"
+      placeholder="Search..."
+    />
+
+    <button
+      pButton
+      type="button"
+      label="Search"
+      (click)="searchAuthorByName()"
+    ></button>
+  </header>
+
+  <ng-template [ngIf]="authorsList">
+    <app-authors-list [info]="authorsList"></app-authors-list>
+  </ng-template>
+
+  <ng-template [ngIf]="!authorsList">
+    <app-empty-result text="No authors to show..."></app-empty-result>
+  </ng-template>
+</main>

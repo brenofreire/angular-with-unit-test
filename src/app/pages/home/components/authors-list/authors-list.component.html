@@ -1,1 +1,8 @@
-<p>authors-list works!</p>
+<section class="authors-list-component" *ngIf="info">
+  <ng-template ngFor let-author [ngForOf]="info.docs">
+    <div class="authors-item" (click)="worksByAuthor(author.key)">
+      <span>{{ author.name }}</span> <br />
+      <small>Main book: {{ author.top_work }}</small>
+    </div>
+  </ng-template>
+</section>

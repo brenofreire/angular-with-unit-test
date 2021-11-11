@@ -1,0 +1,13 @@
+main {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  gap: 10px;
+}
+
+header input {
+  flex: 1;
+}

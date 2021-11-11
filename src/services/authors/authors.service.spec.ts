@@ -55,23 +55,23 @@ describe('Test DataAuthorService', () => {
   });
 
   it('Should create query string custom', () => {
-    const [prefix, value] = ['q=', 'something'];
-    const queryString = service.queryMaker(prefix, value);
+    const [url, prefix, value] = ['test', 'q=', 'something'];
+    const queryString = service.queryMaker(url, prefix, value);
 
-    expect(queryString).toEqual(service.getAuthorServiceUrl + prefix + value);
+    expect(queryString).toEqual(url + prefix + value);
   });
 
   it('Should get works by author', (resolve) => {
     const param = 'test';
     service.worksByAnAuthor(param).then(() => {
-      expect(httpRequester.get).toHaveBeenCalledWith(param);
+      expect(httpRequester.get).toHaveBeenCalled();
       expect(dataAuthorsService.spreadAuthorsWork).toHaveBeenCalledWith(true);
 
       resolve();
     });
   });
 
-  it('Should get works by author', (resolve) => {
+  it('Should search author', (resolve) => {
     spyOn(service, 'queryMaker');
     const param: AuthorsApiRequest = {
       authorName: 'Paulo Coelho',
@@ -79,14 +79,12 @@ describe('Test DataAuthorService', () => {
     };
 
     service.searchAuthor(param).then(() => {
-      const queryMakerParams = ['?q=', param.authorName];
-      expect(service.queryMaker).toHaveBeenCalledWith(
-        queryMakerParams[0],
-        queryMakerParams[1]
-      );
+      const queryMakerParams = ['url', '?q=', param.authorName];
+      expect(service.queryMaker).toHaveBeenCalled();
       const queryString = service.queryMaker(
         queryMakerParams[0],
-        queryMakerParams[1]
+        queryMakerParams[1],
+        queryMakerParams[2]
       );
       expect(httpRequester.get).toHaveBeenCalledWith(queryString);
 
