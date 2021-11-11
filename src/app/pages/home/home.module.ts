@@ -7,8 +7,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { AuthorWorksListComponent } from './components/author-works-list/author-works-list.component';
 @NgModule({
-  declarations: [HomeComponent, AuthorsListComponent],
+  declarations: [HomeComponent, AuthorsListComponent, AuthorWorksListComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

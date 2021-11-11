@@ -13,7 +13,7 @@ export class DataAuthorsService {
     this.authorsWork.next(authorsWork);
   }
 
-  getAuthorsList$(): Subject<any> {
+  getAuthorsWork$(): Subject<any> {
     return this.authorsWork;
   }
 }

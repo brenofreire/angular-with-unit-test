@@ -17,14 +17,14 @@ const mockHttpRequester = () => {
 
   return methods;
 };
-const mockDataAuthorsService = () => {
+export const mockDataAuthorsService = () => {
   const methods = jasmine.createSpyObj([
     'spreadAuthorsWork',
-    'getAuthorsList$',
+    'getAuthorsWork$',
   ]);
 
   methods.spreadAuthorsWork.and.returnValue();
-  methods.getAuthorsList$.and.returnValue(of([]));
+  methods.getAuthorsWork$.and.returnValue(of([]));
 
   return methods;
 };
