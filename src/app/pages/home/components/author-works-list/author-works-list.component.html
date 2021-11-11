@@ -1,7 +1,7 @@
 <section class="author-works-list">
   <ng-template [ngIf]="works">
     <div *ngFor="let work of works.entries" class="author-work-item">
-      <p-avatar>P</p-avatar>
+      <p-avatar>{{ work.title.charAt(0) }}</p-avatar>
       <div [header]="work.title">
         <strong>{{ work.title || "No title" }}</strong> <br />
         <small>Latest rervision: {{ work.latest_revision }}</small>
