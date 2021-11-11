@@ -65,7 +65,6 @@ describe('Test DataAuthorService', () => {
     const param = 'test';
     service.worksByAnAuthor(param).then(() => {
       expect(httpRequester.get).toHaveBeenCalled();
-      expect(dataAuthorsService.spreadAuthorsWork).toHaveBeenCalledWith(true);
 
       resolve();
     });

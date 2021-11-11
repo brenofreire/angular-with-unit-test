@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { AuthorWorksListComponent } from './components/author-works-list/author-works-list.component';
+import { AvatarModule } from 'primeng/avatar';
+
 @NgModule({
   declarations: [HomeComponent, AuthorsListComponent, AuthorWorksListComponent],
   imports: [
@@ -17,6 +19,7 @@ import { AuthorWorksListComponent } from './components/author-works-list/author-
     FormsModule,
     ButtonModule,
     ComponentsModule,
+    AvatarModule,
   ],
   exports: [HomeComponent],
 })

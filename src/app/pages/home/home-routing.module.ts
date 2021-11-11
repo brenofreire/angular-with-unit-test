@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthorsListComponent } from './components/authors-list/authors-list.component';
+import { AuthorWorksListComponent } from './components/author-works-list/author-works-list.component';
 import { HomeComponent } from './home.component';
 
 const routes: Routes = [
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'author/works',
-    component: AuthorsListComponent,
+    path: 'author/:hash',
+    component: AuthorWorksListComponent,
   },
 ];
 

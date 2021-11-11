@@ -37,11 +37,9 @@ export class AuthorsService {
       const suffixUrl = '/works.json';
       const url = this.queryMaker(this.worksByAnAuthorUrl, hash, suffixUrl);
 
-      const authorsList = await this.httpRequester.get(url);
-      this.dataAuthorsService.spreadAuthorsWork(authorsList);
+      const workList = await this.httpRequester.get(url);
+      this.dataAuthorsService.spreadAuthorsWork(workList);
     } catch (error) {
-      console.error(error);
-
       throw error;
     }
   }

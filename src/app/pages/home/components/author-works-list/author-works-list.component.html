@@ -1,1 +1,13 @@
-<p>author-works-list works!</p>
+<section class="author-works-list">
+  <ng-template [ngIf]="works">
+    <div *ngFor="let work of works.entries" class="author-work-item">
+      <p-avatar>P</p-avatar>
+      <div [header]="work.title">
+        <strong>{{ work.title || "No title" }}</strong> <br />
+        <small>Latest rervision: {{ work.latest_revision }}</small>
+
+        <div>Date: {{ work.created.value }}</div>
+      </div>
+    </div>
+  </ng-template>
+</section>
